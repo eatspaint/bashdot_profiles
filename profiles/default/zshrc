@@ -7,7 +7,7 @@ ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_CUSTOM_CONFIG="$ZSH_CUSTOM/config"
 
 for file in $ZSH_CUSTOM_CONFIG/*; do
-  echo "Sourcing $file"
+  # echo "Sourcing $file"
   source "$file"
 done
 
