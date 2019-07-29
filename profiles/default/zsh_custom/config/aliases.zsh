@@ -8,6 +8,7 @@ alias thelp="t shorthelp"
 alias ys='yarn start'
 # rails
 alias rs='rails s'
+alias rc='rails c'
 # git
 alias gs="git status"
 alias gd="git diff"
