@@ -48043,6 +48043,8 @@
 	<false/>
 	<key>HideMenuBarInFullscreen</key>
 	<false/>
+	<key>HideScrollbar</key>
+	<true/>
 	<key>Hotkey</key>
 	<false/>
 	<key>HotkeyChar</key>
@@ -48097,9 +48099,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>663 547 770 429 0 0 1680 1027 </string>
+	<string>1933 384 770 429 0 0 3840 1577 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 677 1680 350 0 0 1680 1027 </string>
+	<string>0 443 3840 1134 0 0 3840 1577 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>20 501 575 373 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -49577,6 +49579,10 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>66EB661B-1469-468E-BE68-58DC1200A76D</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -49625,7 +49631,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-04-18T17:03:25Z</date>
+	<date>2019-07-08T15:36:13Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -49647,7 +49653,7 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.2.8</string>
+	<string>3.2.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
