@@ -1,9 +1,9 @@
 syntax on
 
 " Adapted from: https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""
 " => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " Sets how many lines of history VIM has to remember
 set history=500
 
@@ -25,9 +25,9 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""
 " => VIM user interface
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 
 "Always show current position
 set ruler
@@ -62,24 +62,24 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""
 " => Files, backups and undo
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set nowb
 set noswapfile
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""
 " => Text, tab and indent related
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " Use spaces instead of tabs
 " set expandtab
 
 " Be smart when using tabs ;)
 set smarttab
 
-" 1 tab == 4 spaces
+" 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
 
@@ -91,9 +91,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-""""""""""""""""""""""""""""""
+"""
 " => Status line
-""""""""""""""""""""""""""""""
+"
 " Always show the status line
 
 set laststatus=2
@@ -102,9 +102,9 @@ set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 hi statusline ctermfg=6
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""
 " => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
@@ -115,4 +115,49 @@ endfunction
 
 function! CmdLine(str)
     call feedkeys(":" . a:str)
-endfunction 
+endfunction
+
+"""
+" => Options
+"
+set scrolloff=1    " When scrolling, keep cursor in the middle
+set shiftround     " When at 3 spaces and I hit >>, go to 4, not 5.
+set colorcolumn=+0 " Set to the textwidth
+
+"""
+" => Numbers
+"
+set relativenumber
+set number
+set numberwidth=3
+highlight LineNr ctermfg=grey
+highlight CursorLineNr ctermfg=white ctermbg=magenta
+
+"""
+" => VimPlug
+"
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+" Auto-add `end` in Ruby, `endfunction` in Vim, etc
+Plug 'tpope/vim-endwise'
+" When editing deeply/nested/file, auto-create deeply/nested/ dirs
+Plug 'duggiefresh/vim-easydir'
+" Intelligently reopen files where you left off
+Plug 'farmergreg/vim-lastplace'
+
+call plug#end()
+
+
+"""
+" => NERDTree
+"
+autocmd vimenter * NERDTree
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
