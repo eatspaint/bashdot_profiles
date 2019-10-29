@@ -1,0 +1,8 @@
+#autoload
+whose() {
+  echo "# Finding out who wrote $1\n"
+  echo "# Commits by author:"
+  git shortlog -n -s $1 | cat
+  echo "\n# Lines in current version by author:"
+  git ls-tree -r -z --name-only HEAD -- $1 | xargs -0 -n1 git blame --line-porcelain HEAD | sed -n 's/^author //p' | sort | uniq -c | sort -nr
+}

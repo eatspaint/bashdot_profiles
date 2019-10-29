@@ -1,0 +1,13 @@
+#autoload
+fuck() {
+    rm -f tmp/fixture_builder.yml &&\
+    rm -rf spec/fixtures &&\
+    rm -rf spec/javascripts/fixtures &&\
+    mkdir spec/fixtures &&\
+    mkdir spec/javascripts/fixtures &&\
+    touch spec/fixtures/.gitkeep &&\
+    touch spec/javascripts/fixtures/.gitkeep &&\
+    bin/rails db:ffs &&\
+    rails assets:precompile RAILS_ENV='test' &&\
+    bin/rails jasmine:generate_fixtures
+}
