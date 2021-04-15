@@ -39,3 +39,7 @@ typeset -aU path
 
 # source [NEEDS TO BE LAST LINE]
 source $ZSH/oh-my-zsh.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/christianfuller/.sdkman"
+[[ -s "/Users/christianfuller/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/christianfuller/.sdkman/bin/sdkman-init.sh"
