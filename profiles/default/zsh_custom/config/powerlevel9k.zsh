@@ -1,12 +1,12 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k" # 10k is backward compat with 9k config
 # enable nerd fonts
 POWERLEVEL9K_MODE='nerdfont-complete'
 # customize prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator context dir vcs todo status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time)
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
-DEFAULT_USER='christianfuller'
+DEFAULT_USER='eatspaint'
 POWERLEVEL9K_ALWAYS_SHOW_USER=true
 POWERLEVEL9K_DISABLE_RPROMPT=false
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND='green'
